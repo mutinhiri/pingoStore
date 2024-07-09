@@ -30,6 +30,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        format.turbo_stream
         format.html { redirect_to store_index_url,
           notice: "Line item was successfully created." }
         format.json { render :show,
